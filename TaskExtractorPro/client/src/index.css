@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Professional Black, White, Gold Theme */
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(0, 0%, 9%);
+  --muted: hsl(0, 0%, 96%);
+  --muted-foreground: hsl(0, 0%, 45%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(0, 0%, 9%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(0, 0%, 9%);
+  --border: hsl(0, 0%, 90%);
+  --input: hsl(0, 0%, 96%);
+  --primary: hsl(45, 100%, 51%); /* Gold */
+  --primary-foreground: hsl(0, 0%, 9%);
+  --secondary: hsl(0, 0%, 15%); /* Charcoal */
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(45, 100%, 51%); /* Gold accent */
+  --accent-foreground: hsl(0, 0%, 9%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(45, 100%, 51%);
+  --radius: 0.5rem;
+  --warning: hsl(45, 96%, 47%);
+  --warning-foreground: hsl(0, 0%, 9%);
+  
+  /* Custom gold shades */
+  --gold-light: hsl(45, 100%, 85%);
+  --gold-medium: hsl(45, 100%, 51%);
+  --gold-dark: hsl(45, 100%, 35%);
+}
+
+.dark {
+  --background: hsl(0, 0%, 9%); /* Rich black */
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(0, 0%, 15%);
+  --muted-foreground: hsl(0, 0%, 65%);
+  --popover: hsl(0, 0%, 9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(0, 0%, 12%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(0, 0%, 20%);
+  --input: hsl(0, 0%, 15%);
+  --primary: hsl(45, 100%, 51%); /* Gold remains consistent */
+  --primary-foreground: hsl(0, 0%, 9%);
+  --secondary: hsl(0, 0%, 85%); /* Light gray */
+  --secondary-foreground: hsl(0, 0%, 9%);
+  --accent: hsl(45, 100%, 51%); /* Gold accent */
+  --accent-foreground: hsl(0, 0%, 9%);
+  --destructive: hsl(0, 62%, 50%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(45, 100%, 51%);
+  --radius: 0.5rem;
+  --warning: hsl(45, 96%, 47%);
+  --warning-foreground: hsl(0, 0%, 9%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .priority-high {
+    @apply bg-red-50 text-red-800 dark:bg-red-900/20 dark:text-red-400;
+  }
+  
+  .priority-medium {
+    @apply bg-amber-50 text-amber-800 dark:bg-amber-900/20 dark:text-amber-400;
+  }
+  
+  .priority-low {
+    @apply bg-green-50 text-green-800 dark:bg-green-900/20 dark:text-green-400;
+  }
+  
+  .task-card {
+    @apply border border-border rounded-lg p-4 hover:shadow-md transition-all duration-200 bg-card hover:border-primary;
+  }
+  
+  .task-card:hover .task-actions {
+    @apply opacity-100;
+  }
+  
+  .task-actions {
+    @apply opacity-0 transition-opacity;
+  }
+  
+  /* Professional gold gradients and utilities */
+  .gradient-gold {
+    background: linear-gradient(135deg, hsl(45, 100%, 51%) 0%, hsl(45, 100%, 35%) 100%);
+  }
+  
+  .text-gold {
+    color: hsl(45, 100%, 51%);
+  }
+  
+  .border-gold {
+    border-color: hsl(45, 100%, 51%);
+  }
+  
+  .bg-gold {
+    background-color: hsl(45, 100%, 51%);
+  }
+  
+  .hover-gold:hover {
+    background-color: hsl(45, 100%, 45%);
+  }
+  
+  /* Elegant card styling */
+  .elegant-card {
+    @apply bg-card border border-border shadow-sm hover:shadow-md hover:border-primary transition-all duration-300 rounded-lg;
+  }
+}
